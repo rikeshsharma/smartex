@@ -24,7 +24,7 @@ function getData(){
               
                 
               tab += `<tr id='row_${s_no}'><td>${s_no}</td>`;
-              
+              tab += `<td>OUT</td>`;
                 
                 
                 if (typeof data.Items[i].rollno == 'undefined'){
@@ -91,6 +91,7 @@ function getData(){
           // console.log(typeof(data.Items[0].rollno));
           for(let i=0;i<data.Items.length; ++i){
                tab += `<tr id='row_${s_no}'><td>${s_no}</td>`;
+            tab += `<td>IN</td>`;
                if (typeof data.Items[i].rollno == 'undefined'){
                  // table.rows[i+1].cells[j].innerHTML = '';
                 tab += `<td>${''}</td>`;
@@ -164,7 +165,7 @@ function getData(){
               tab += `<tr id='row_${s_no}'><td>${s_no}</td>`;
               
                 
-                
+                tab += `<td>OUT</td>`;
                 if (typeof data.Items[i].userID == 'undefined'){
                   // table.rows[i+1].cells[j].innerHTML = '';
                   tab += `<td>${''}</td>`;
@@ -229,6 +230,7 @@ function getData(){
           // // console.log(typeof(data.Items[0].rollno));
           for(let i=0;i<data.Items.length; ++i){
                tab += `<tr id='row_${s_no}'><td>${s_no}</td>`;
+              tab += `<td>IN</td>`;
                if (typeof data.Items[i].userID == 'undefined'){
                  // table.rows[i+1].cells[j].innerHTML = '';
                 tab += `<td>${''}</td>`;
