@@ -23,3 +23,10 @@ document.getElementById("entryButton").addEventListener("click", function() {
 
     window.location.href = "index.html";
   });
+
+  document.getElementById("general-user-regis-btn").addEventListener("click", function() {
+    
+    // sessionStorage.clear();
+
+    window.location.href = "newnonstudent.html";
+  });

@@ -1,8 +1,8 @@
 // console.log("newadminjs is loaded");
 
-function addNewAdmin(){
+function submitForm(){
     let name = document.getElementById("nameInput").value;
-    let ID = document.getElementById("idnoInput").value;
+    let ID = document.getElementById("AdhaarIDInput").value;
     let address = document.getElementById("addressInput").value;
     let phoneno = document.getElementById("phoneInput").value;
 
@@ -14,10 +14,16 @@ function addNewAdmin(){
         window.alert("Please enter a correct Name");
         return;
     }
-    if(ID.length < 12){
+    let IDpattern = /^\d{12}$/;
+
+    if(ID.match(IDpattern)){
+        
+    }
+    else{
         window.alert("The Aadhaar number is incorrect");
         return;
     }
+    ID = "GUID" + ID;
     if(address.length === 0){
         window.alert("Please enter address to proceed");
         return;
@@ -48,14 +54,16 @@ function addNewAdmin(){
     .then(data => {
         // Handle success or error response from server
         // console.log(data);
+        console.log(data);
         if(data.name == name){
-            window.alert("Successfully added new general user");
-            document.getElementById("nameInput").value = "";
-            document.getElementById("idnoInput").value = "";
-            document.getElementById("addressInput").value = "";
-            document.getElementById("phoneInput").value = "";
+            window.alert("Successfully added new general user with user ID " + data.userID);
+            // document.getElementById("nameInput").value = "";
+            // document.getElementById("idnoInput").value = "";
+            // document.getElementById("addressInput").value = "";
+            // document.getElementById("phoneInput").value = "";
 
-            location.reload();
+            // location.reload();
+            window.location.href= "homepage.html";
         }
         else{
              window.alert("Failed to add new general user");
